@@ -9,11 +9,12 @@ def train_word2vec(textlist, window, embedding_size):
 
     # Split the training data
     # modified from the asnwer in this post here: https://stackoverflow.com/questions/50544730/how-do-i-split-a-custom-dataset-into-training-and-test-datasets
-    X_train, X_val, Y_train, Y_val = train_test_split(X, Y, test_size=0.2, random_state=42)
-    X_train_tensor = torch.tensor(X_train, dtype=torch.long)
-    Y_train_tensor = torch.tensor(Y_train, dtype=torch.long)
-    X_val_tensor = torch.tensor(X_val, dtype=torch.long)
-    Y_val_tensor = torch.tensor(Y_val, dtype=torch.long)
+    X_tensor = torch.tensor(X, dtype=torch.long)
+    Y_tensor = torch.tensor(Y, dtype=torch.long)
+
+    X_train_tensor, X_val_tensor, Y_train_tensor, Y_val_tensor = train_test_split(
+        X_tensor, Y_tensor, test_size=0.2, random_state=42
+    )
 
     # instantiate the network & set up the optimizer
 
