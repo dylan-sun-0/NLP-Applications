@@ -21,6 +21,7 @@ def tokenize_and_preprocess_text(textlist, w2i, window):
         context_words = tokenized_corpus[start_index:i] + tokenized_corpus[i + 1:end_index]
         
         # Add positive sample
+        # these 2 sections below were auto completed on google collab (not sourceble AI gen)
         for context_word in context_words:
             X.append(target_word)
             T.append(context_word)

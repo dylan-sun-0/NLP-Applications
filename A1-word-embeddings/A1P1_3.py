@@ -9,7 +9,7 @@ def print_closest_words(vec, n=5):
 def print_analgous_word(word1, word2, word3):
     print_closest_words(glove[word1] - glove[word2] + glove[word3], n=1)
 
-# exampple from teh table: plural verbs
+# example from the table: plural verbs
 print_analgous_word('work', 'works', 'speaks')
 
 # 10 more examples using the same relationship

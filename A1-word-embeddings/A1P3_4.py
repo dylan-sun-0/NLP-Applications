@@ -1,4 +1,6 @@
 class Word2vecModel(torch.nn.Module):
+    # code partially taken from examples here: https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html
+    
     def __init__(self, vocab_size, embedding_size):
         super().__init__()
         # initialize word vectors to random numbers

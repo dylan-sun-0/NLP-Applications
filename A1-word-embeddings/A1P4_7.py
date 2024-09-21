@@ -13,6 +13,8 @@ def train_sgns(textlist, window=5, embedding_size=8):
         X_tensor, T_tensor, Y_tensor, test_size=0.2
     )
 
+    # training loop was modified from tutorial 5 in APS360 notes from 2022
+
     # Instantiate the network & set up the optimizer
     network = SkipGramNegativeSampling(vocab_size, embedding_size)
     optimizer = torch.optim.Adam(network.parameters(), lr=1e-5)
@@ -80,6 +82,7 @@ def train_sgns(textlist, window=5, embedding_size=8):
         # Print loss for every epoch
         print(f'Epoch {epoch + 1}/{num_epochs}, Train Loss: {train_losses[-1]}, Val Loss: {val_losses[-1]}')
 
+    # Plot taken from tutorial 2 in APS360 from 2022
     # Plot training and validation loss
     plt.figure(figsize=(10, 5))
     plt.plot(train_losses, label='Training Loss')
